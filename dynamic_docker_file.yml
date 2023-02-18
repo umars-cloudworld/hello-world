@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+  become: yes
+  connection: ssh
+  tasks:
+    - name: Stop Docker Container
+      shell: docker stop valaxy_demo
+    - name: Remove Docker Container
+      shell: docker rm -f valaxy_demo
+    - name: Remove Docker Image
+      shell: docker image rm  -f thedockerguru03/ansible_docker_project4-part3:latest
+    - name: Run Docker Container
+      shell: docker run -d --name valaxy_demo -p 8090:8080 thedockerguru03/ansible_docker_project4-part3:latest
