@@ -1,4 +1,5 @@
 #!/bin/bash
+set -x
 cd /opt/docker
 docker build -t valaxy_demo .
 docker tag thdockerguru03 thdockerguru03/valaxy_demo
