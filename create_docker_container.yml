@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  become: yes
+  connection: ssh
+  tasks:
+    - name: Run Docker Container
+      shell: docker run -d --name valaxy_demo -p 8090:8080 thedockerguru03/valaxy_demo
